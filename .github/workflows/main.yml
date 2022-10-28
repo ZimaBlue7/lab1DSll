@@ -1,0 +1,34 @@
+name: lab1DSIII
+
+on:
+  push:
+    branches: [main]
+    
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+
+    steps:
+      - uses: actions/checkout@v3
+  
+      - name: run get update
+        run: sudo apt get update
+
+      - name: run get upgrade
+        run: sudo apt get upgrade
+      
+  
+      - name: install node modules
+        run: npm install    
+      
+      - name: run test
+        run: npm test
+      
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: 2a728ef9-dd9c-48a4-8c44-0504334c352c
+          heroku_app_name: "lab1-dsll" #Must be unique in Heroku
+          heroku_email: "juan.getial@correounivalle.edu.co"
+          branch: "master"
