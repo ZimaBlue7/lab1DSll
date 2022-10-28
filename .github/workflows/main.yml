@@ -31,4 +31,4 @@ jobs:
           heroku_api_key: 2a728ef9-dd9c-48a4-8c44-0504334c352c
           heroku_app_name: "lab1-dsll" #Must be unique in Heroku
           heroku_email: "juan.getial@correounivalle.edu.co"
-          branch: "master"
+          branch: "main"
